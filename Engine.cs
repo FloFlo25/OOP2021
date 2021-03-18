@@ -108,6 +108,8 @@ namespace Tema_Laborator_3_Robot_Object
             while (Killer.IsAlive && Target.IsAlive)
             {
                 statsAndRounds(Target, Killer);
+                Console.WriteLine(Target.HP + " " + Killer.HP);
+                Console.WriteLine(Killer.IsAlive + " " + Target.IsAlive);
                 Console.ReadKey();
 
                 if (Target.ENERGY==5)

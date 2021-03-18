@@ -98,7 +98,7 @@ namespace Tema_Laborator_3_Robot_Object
             }
             set
             {
-                if (HP<=0)
+                if (hp<=0)
                 {
                     isAlive = false;
                 }
