@@ -8,10 +8,10 @@ namespace Tema_Laborator_3_Robot_Object
     public class Robots
     {
         private int hp = 150;
-        private int dmg = 10;
+        private static int dmg = 10;
         private int armor = 5;
         private int energy = 0;
-        private int laserIntensity=0;
+        private int ultimate = dmg * 2;
         private bool isAlive = true;
         private string name = "Robot Killer";
 
@@ -27,6 +27,16 @@ namespace Tema_Laborator_3_Robot_Object
                 return dmg - Planets.Target.ARMOR;
             }
         }
+
+        public int ULTIMATE
+        {
+            get
+            {
+                return ultimate - Planets.Target.ARMOR;
+            }
+
+        }
+
 
         public int ENERGY
         {
@@ -64,6 +74,10 @@ namespace Tema_Laborator_3_Robot_Object
             get
             {
                 return hp;
+            }
+            set
+            {
+                hp = value;
             }
         }
 

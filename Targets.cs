@@ -9,10 +9,11 @@ namespace Tema_Laborator_3_Robot_Object
     {
         
         private int health;
-        private int dmg;
+        private static int dmg;
         private int armor;
         private int energy = 0;
         private string type;
+        private int ultimate = dmg * 2;
         
 
 
@@ -84,6 +85,10 @@ namespace Tema_Laborator_3_Robot_Object
             {
                 return health;
             }
+            set
+            {
+                health = value;
+            }
         }
 
         //the damage of the target
@@ -99,12 +104,7 @@ namespace Tema_Laborator_3_Robot_Object
         {
             get
             {
-                return dmg * 2;
-            }
-            set
-            {
-                if (ENERGY == 5)
-                    dmg = dmg * 2;
+                return ultimate - Planets.KillerRobot.ARMOR;
             }
 
         }

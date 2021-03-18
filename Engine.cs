@@ -109,8 +109,48 @@ namespace Tema_Laborator_3_Robot_Object
             {
                 statsAndRounds(Target, Killer);
                 Console.ReadKey();
+
+                if (Target.ENERGY==5)
+                {
+                    Target.HP = Target.HP - Killer.ULTIMATE;
+                    Target.ENERGY = 0;
+                }
+                else
+                {
+                    Target.HP = Target.HP - Killer.DMG;
+                }
+
+                if (Killer.ENERGY == 5)
+                {
+                    Killer.HP = Killer.HP - Target.ULTIMATE;
+                    Killer.ENERGY = 0;
+                }
+                else
+                {
+                    Killer.HP = Killer.HP - Target.DMG;
+                }
+
+                
             }
             
+            if(!Killer.IsAlive)
+            {
+                Console.Clear();
+
+                Console.WriteLine($"{Target.NAME} wins!");
+            }
+            else if (!Target.IsAlive)
+            {
+                Console.Clear();
+
+                Console.WriteLine($"{Killer.NAME} wins!");
+            }
+            else if (!Killer.IsAlive && !Target.IsAlive)
+            {
+                Console.Clear();
+
+                Console.WriteLine($"ITS A TIE!");
+            }
 
 
 
